@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARJUNO OUTDOOR - Riwayat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="main-container">
+        <header class="header">
+            <div class="header-left">
+                <div class="logo-icon">🏔️</div>
+                <div class="brand-info">
+                    <h1 class="brand-name">ARJUNO OUTDOOR</h1>
+                    <p class="brand-subtitle">Rental Management System</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="clock-display">
+                    <div class="time" id="current-time">00:00:00</div>
+                    <div class="date" id="current-date">Loading...</div>
+                </div>
+                <div class="divider"></div>
+                <div class="user-info">
+                    <div class="user-details">
+                        <div class="user-label">Logged in as</div>
+                        <div class="user-name">Admin Arjuno</div>
+                    </div>
+                    <button class="logout-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="left-panel">
+                <div class="glass-card">
+                    <h2 class="section-title">Riwayat Transaksi</h2>
+                    
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Cari nama pelanggan atau nomor telepon..." onkeyup="searchTable('searchInput', 'historyTable')">
+                    </div>
+
+                    <table class="data-table" id="historyTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nama Pelanggan</th>
+                                <th>No. Telepon</th>
+                                <th>Produk</th>
+                                <th>Status</th>
+                                <th>Tanggal</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#001</td>
+                                <td>Budi Santoso</td>
+                                <td>081234567890</td>
+                                <td>Tenda Dome 4P, Sleeping Bag</td>
+                                <td><span class="status-badge status-active">Aktif</span></td>
+                                <td>23 Mei 2026</td>
+                                <td>Rp 200.000</td>
+                            </tr>
+                            <tr>
+                                <td>#002</td>
+                                <td>Siti Aminah</td>
+                                <td>081298765432</td>
+                                <td>Carrier 70L, Jaket Gunung</td>
+                                <td><span class="status-badge status-completed">Selesai</span></td>
+                                <td>22 Mei 2026</td>
+                                <td>Rp 255.000</td>
+                            </tr>
+                            <tr>
+                                <td>#003</td>
+                                <td>Ahmad Rizki</td>
+                                <td>081356789012</td>
+                                <td>Cooking Set, Kompor</td>
+                                <td><span class="status-badge status-active">Aktif</span></td>
+                                <td>23 Mei 2026</td>
+                                <td>Rp 120.000</td>
+                            </tr>
+                            <tr>
+                                <td>#004</td>
+                                <td>Dewi Lestari</td>
+                                <td>081445678901</td>
+                                <td>Tenda, Carrier 70L</td>
+                                <td><span class="status-badge status-pending">Pending Return</span></td>
+                                <td>21 Mei 2026</td>
+                                <td>Rp 375.000</td>
+                            </tr>
+                            <tr>
+                                <td>#005</td>
+                                <td>Eko Prasetyo</td>
+                                <td>081523456789</td>
+                                <td>Sleeping Bag, Jaket</td>
+                                <td><span class="status-badge status-completed">Selesai</span></td>
+                                <td>20 Mei 2026</td>
+                                <td>Rp 180.000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="nav-grid">
+                    <a href="index.html" class="nav-card">
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span class="nav-label">Pesanan</span>
+                    </a>
+                    <a href="produk.html" class="nav-card admin-tab">
+                        <div class="admin-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        </svg>
+                        <span class="nav-label">Produk</span>
+                    </a>
+                    <a href="riwayat.html" class="nav-card active">
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span class="nav-label">Riwayat</span>
+                    </a>
+                    <a href="setting.html" class="nav-card admin-tab">
+                        <div class="admin-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6m0 6v6m-9-9h6m6 0h6"></path>
+                        </svg>
+                        <span class="nav-label">Setting</span>
+                    </a>
+                    <a href="pengeluaran.html" class="nav-card">
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
+                            <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path>
+                            <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path>
+                        </svg>
+                        <span class="nav-label">Pengeluaran</span>
+                    </a>
+                    <a href="informasi.html" class="nav-card">
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        <span class="nav-label">Informasi</span>
+                    </a>
+                    <a href="pelanggan.html" class="nav-card">
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        <span class="nav-label">Pelanggan</span>
+                    </a>
+                    <a href="kasir.html" class="nav-card admin-tab">
+                        <div class="admin-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span class="nav-label">Kasir</span>
+                    </a>
+                </div>
+                <div class="admin-info">
+                    <div class="admin-info-header">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <span>Admin Access</span>
+                    </div>
+                    <div class="admin-info-text">Fitur dengan icon shield hanya untuk Administrator</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

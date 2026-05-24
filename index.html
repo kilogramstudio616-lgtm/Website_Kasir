@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARJUNO OUTDOOR - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="background-image"></div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="logo-icon">🏔️</div>
+                <div class="brand-info">
+                    <h1 class="brand-name">ARJUNO OUTDOOR</h1>
+                    <p class="brand-subtitle">Rental Management System</p>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="clock-display">
+                    <div class="time" id="current-time">00:00:00</div>
+                    <div class="date" id="current-date">Loading...</div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="user-info">
+                    <div class="user-details">
+                        <div class="user-label">Logged in as</div>
+                        <div class="user-name">Admin Arjuno</div>
+                    </div>
+                    <button class="logout-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content-wrapper">
+            <!-- Left Dashboard -->
+            <div class="left-panel">
+                <!-- Promo Carousel -->
+                <div class="glass-card">
+                    <div class="carousel">
+                        <div class="carousel-slide active" style="background: linear-gradient(to right, #10b981, #14b8a6);">
+                            <h3 class="carousel-title">Promo Camping Weekend</h3>
+                            <p class="carousel-desc">Diskon 20% untuk sewa tenda 2 hari lebih</p>
+                        </div>
+                        <div class="carousel-slide" style="background: linear-gradient(to right, #3b82f6, #06b6d4);">
+                            <h3 class="carousel-title">Paket Hemat Carrier</h3>
+                            <p class="carousel-desc">Gratis sleeping bag untuk sewa carrier</p>
+                        </div>
+                        <div class="carousel-slide" style="background: linear-gradient(to right, #8b5cf6, #ec4899);">
+                            <h3 class="carousel-title">Diskon Member</h3>
+                            <p class="carousel-desc">Cashback 15% untuk member setia</p>
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active" data-slide="0"></span>
+                            <span class="dot" data-slide="1"></span>
+                            <span class="dot" data-slide="2"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(to bottom right, #34d399, #14b8a6);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <div class="stat-value">24</div>
+                        <div class="stat-label">Total Transaksi Hari Ini</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(to bottom right, #60a5fa, #22d3ee);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div class="stat-value">18</div>
+                        <div class="stat-label">Pelanggan Aktif</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(to bottom right, #a78bfa, #f472b6);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                <polyline points="17 6 23 6 23 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="stat-value">42</div>
+                        <div class="stat-label">Produk Tersewa</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(to bottom right, #fb923c, #ef4444);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="stat-value">7</div>
+                        <div class="stat-label">Pending Return</div>
+                    </div>
+                </div>
+
+                <!-- Recent Customers -->
+                <div class="glass-card">
+                    <h3 class="section-title">Pelanggan Terbaru</h3>
+                    <div class="customer-list">
+                        <div class="customer-item">
+                            <div class="customer-header">
+                                <div>
+                                    <div class="customer-name">Budi Santoso</div>
+                                    <div class="customer-phone">081234567890</div>
+                                </div>
+                                <div class="customer-time">2 jam lalu</div>
+                            </div>
+                            <div class="customer-products">📦 Tenda Dome 4P, Sleeping Bag</div>
+                        </div>
+
+                        <div class="customer-item">
+                            <div class="customer-header">
+                                <div>
+                                    <div class="customer-name">Siti Aminah</div>
+                                    <div class="customer-phone">081298765432</div>
+                                </div>
+                                <div class="customer-time">3 jam lalu</div>
+                            </div>
+                            <div class="customer-products">📦 Carrier 70L, Jaket Gunung</div>
+                        </div>
+
+                        <div class="customer-item">
+                            <div class="customer-header">
+                                <div>
+                                    <div class="customer-name">Ahmad Rizki</div>
+                                    <div class="customer-phone">081356789012</div>
+                                </div>
+                                <div class="customer-time">5 jam lalu</div>
+                            </div>
+                            <div class="customer-products">📦 Cooking Set, Kompor Portable</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stock Overview -->
+                <div class="glass-card">
+                    <h3 class="section-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 12px;">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        </svg>
+                        Inventory / Stok Overview
+                    </h3>
+                    <div class="stock-grid">
+                        <div class="stock-item">
+                            <div class="stock-header">
+                                <div class="stock-emoji">🏕️</div>
+                                <div class="stock-info">
+                                    <div class="stock-name">Tenda</div>
+                                    <div class="stock-count">8 / 12 tersedia</div>
+                                </div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 66.67%"></div>
+                            </div>
+                        </div>
+
+                        <div class="stock-item">
+                            <div class="stock-header">
+                                <div class="stock-emoji">🎒</div>
+                                <div class="stock-info">
+                                    <div class="stock-name">Carrier</div>
+                                    <div class="stock-count">12 / 15 tersedia</div>
+                                </div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+
+                        <div class="stock-item">
+                            <div class="stock-header">
+                                <div class="stock-emoji">🛌</div>
+                                <div class="stock-info">
+                                    <div class="stock-name">Sleeping Bag</div>
+                                    <div class="stock-count">15 / 20 tersedia</div>
+                                </div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+
+                        <div class="stock-item">
+                            <div class="stock-header">
+                                <div class="stock-emoji">🍳</div>
+                                <div class="stock-info">
+                                    <div class="stock-name">Cooking Set</div>
+                                    <div class="stock-count">6 / 10 tersedia</div>
+                                </div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cashier Status -->
+                <div class="glass-card">
+                    <h3 class="section-title">Status Kasir</h3>
+                    <div class="cashier-status">
+                        <div class="status-indicator"></div>
+                        <span>Kasir Aktif - Shift Pagi</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Navigation Panel -->
+            <div class="right-panel">
+                <div class="nav-grid">
+                    <a href="pesanan.html" class="nav-card">
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span class="nav-label">Pesanan</span>
+                    </a>
+
+                    <a href="produk.html" class="nav-card admin-tab">
+                        <div class="admin-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        </svg>
+                        <span class="nav-label">Produk</span>
+                    </a>
+
+                    <a href="riwayat.html" class="nav-card">
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span class="nav-label">Riwayat</span>
+                    </a>
+
+                    <a href="setting.html" class="nav-card admin-tab">
+                        <div class="admin-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6m0 6v6m-9-9h6m6 0h6"></path>
+                        </svg>
+                        <span class="nav-label">Setting</span>
+                    </a>
+
+                    <a href="pengeluaran.html" class="nav-card">
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
+                            <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path>
+                            <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path>
+                        </svg>
+                        <span class="nav-label">Pengeluaran</span>
+                    </a>
+
+                    <a href="informasi.html" class="nav-card">
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        <span class="nav-label">Informasi</span>
+                    </a>
+
+                    <a href="pelanggan.html" class="nav-card">
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        <span class="nav-label">Pelanggan</span>
+                    </a>
+
+                    <a href="kasir.html" class="nav-card admin-tab">
+                        <div class="admin-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span class="nav-label">Kasir</span>
+                    </a>
+                </div>
+
+                <!-- Admin Info -->
+                <div class="admin-info">
+                    <div class="admin-info-header">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <span>Admin Access</span>
+                    </div>
+                    <div class="admin-info-text">Fitur dengan icon shield hanya untuk Administrator</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARJUNO OUTDOOR - Pesanan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-image"></div>
+
+    <div class="main-container">
+        <!-- Header (same as index) -->
+        <header class="header">
+            <div class="header-left">
+                <div class="logo-icon">🏔️</div>
+                <div class="brand-info">
+                    <h1 class="brand-name">ARJUNO OUTDOOR</h1>
+                    <p class="brand-subtitle">Rental Management System</p>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="clock-display">
+                    <div class="time" id="current-time">00:00:00</div>
+                    <div class="date" id="current-date">Loading...</div>
+                </div>
+                <div class="divider"></div>
+                <div class="user-info">
+                    <div class="user-details">
+                        <div class="user-label">Logged in as</div>
+                        <div class="user-name">Admin Arjuno</div>
+                    </div>
+                    <button class="logout-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <!-- Left Panel - Pesanan Content -->
+            <div class="left-panel">
+                <div class="page-grid">
+                    <!-- Product Selection -->
+                    <div class="glass-card">
+                        <div class="section-header">
+                            <h2 class="section-title">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 12px;">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                                Pilih Produk
+                            </h2>
+                            <button class="btn-secondary" onclick="openManualAddModal()">+ Manual Add</button>
+                        </div>
+
+                        <div class="product-grid">
+                            <div class="product-card" onclick="addToCart('Tenda Dome 4 Person', 75000, '🏕️')">
+                                <div class="product-emoji">🏕️</div>
+                                <div class="product-name">Tenda Dome 4 Person</div>
+                                <div class="product-price">Rp 75.000/hari</div>
+                            </div>
+
+                            <div class="product-card" onclick="addToCart('Carrier 70L', 50000, '🎒')">
+                                <div class="product-emoji">🎒</div>
+                                <div class="product-name">Carrier 70L</div>
+                                <div class="product-price">Rp 50.000/hari</div>
+                            </div>
+
+                            <div class="product-card" onclick="addToCart('Sleeping Bag', 25000, '🛌')">
+                                <div class="product-emoji">🛌</div>
+                                <div class="product-name">Sleeping Bag</div>
+                                <div class="product-price">Rp 25.000/hari</div>
+                            </div>
+
+                            <div class="product-card" onclick="addToCart('Jaket Gunung', 35000, '🧥')">
+                                <div class="product-emoji">🧥</div>
+                                <div class="product-name">Jaket Gunung</div>
+                                <div class="product-price">Rp 35.000/hari</div>
+                            </div>
+
+                            <div class="product-card" onclick="addToCart('Cooking Set', 40000, '🍳')">
+                                <div class="product-emoji">🍳</div>
+                                <div class="product-name">Cooking Set</div>
+                                <div class="product-price">Rp 40.000/hari</div>
+                            </div>
+
+                            <div class="product-card" onclick="addToCart('Kompor Portable', 20000, '🔥')">
+                                <div class="product-emoji">🔥</div>
+                                <div class="product-name">Kompor Portable</div>
+                                <div class="product-price">Rp 20.000/hari</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shopping Cart -->
+                    <div class="glass-card">
+                        <h2 class="section-title">Keranjang Pesanan</h2>
+                        <div id="cart-items" class="cart-items">
+                            <div class="empty-cart">Keranjang masih kosong</div>
+                        </div>
+
+                        <!-- Customer Form -->
+                        <div class="customer-form">
+                            <div class="form-group">
+                                <label>Nama Pelanggan</label>
+                                <input type="text" id="customer-name" class="form-input" placeholder="Masukkan nama pelanggan">
+                            </div>
+
+                            <div class="form-group">
+                                <label>No. Telepon</label>
+                                <input type="tel" id="customer-phone" class="form-input" placeholder="08xxxxxxxxxx">
+                            </div>
+
+                            <div class="total-section">
+                                <div class="total-label">Total Bayar</div>
+                                <div class="total-value" id="total-price">Rp 0</div>
+                            </div>
+
+                            <button class="btn-primary btn-large" onclick="printReceipt()">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 12px;">
+                                    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                                    <rect x="6" y="14" width="12" height="8"></rect>
+                                </svg>
+                                Cetak Struk & Proses
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Navigation Panel (same as index) -->
+            <div class="right-panel">
+                <div class="nav-grid">
+                    <a href="pesanan.html" class="nav-card active">
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span class="nav-label">Pesanan</span>
+                    </a>
+
+                    <a href="produk.html" class="nav-card admin-tab">
+                        <div class="admin-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        </svg>
+                        <span class="nav-label">Produk</span>
+                    </a>
+
+                    <a href="riwayat.html" class="nav-card">
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span class="nav-label">Riwayat</span>
+                    </a>
+
+                    <a href="setting.html" class="nav-card admin-tab">
+                        <div class="admin-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6m0 6v6m-9-9h6m6 0h6"></path>
+                        </svg>
+                        <span class="nav-label">Setting</span>
+                    </a>
+
+                    <a href="pengeluaran.html" class="nav-card">
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
+                            <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path>
+                            <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path>
+                        </svg>
+                        <span class="nav-label">Pengeluaran</span>
+                    </a>
+
+                    <a href="informasi.html" class="nav-card">
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        <span class="nav-label">Informasi</span>
+                    </a>
+
+                    <a href="pelanggan.html" class="nav-card">
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        <span class="nav-label">Pelanggan</span>
+                    </a>
+
+                    <a href="kasir.html" class="nav-card admin-tab">
+                        <div class="admin-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <svg class="nav-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span class="nav-label">Kasir</span>
+                    </a>
+                </div>
+
+                <div class="admin-info">
+                    <div class="admin-info-header">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <span>Admin Access</span>
+                    </div>
+                    <div class="admin-info-text">Fitur dengan icon shield hanya untuk Administrator</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
